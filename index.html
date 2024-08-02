@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargando...</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <style>
+      /* Estilos generales */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+  
+
+      #progressBar {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 1000%);
+        width: 40px; /* Ancho de la barra de progreso */
+        height: 10px; /* Altura de la barra de progreso */
+        background-color: #f0f0f0;
+        border-radius: 10px; /* Borde redondeado */
+        overflow: hidden;
+        z-index: 2; /* Asegura que la barra de progreso esté sobre el video */
+      }
+
+      #progressBar > div {
+        height: 100%;
+        background-color: #89580f;
+        width: 0;
+      }
+
+      /* Media Queries para Responsividad */
+      @media (max-width: 1200px) {
+        #videoContainer {
+          transform: translate(-30%, -70%);
+        }
+
+        #videoContainer2 {
+          transform: translate(-40%, -20%);
+        }
+
+        #progressBar {
+          width: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #videoContainer {
+          transform: translate(-40%, -70%);
+        }
+
+        #videoContainer2 {
+          transform: translate(-50%, -20%);
+        }
+
+        #progressBar {
+          width: 250px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #videoContainer {
+          transform: translate(-50%, -70%);
+        }
+
+        #videoContainer2 {
+          transform: translate(-60%, -20%);
+        }
+
+        #progressBar {
+          width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Contenedor del video -->
+    <div id="videoContainer2">
+      <video autoplay muted loop>
+        <source src="Loading.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+
+    <div id="videoContainer">
+      <video autoplay muted loop>
+        <source src="Progress.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+
+    <!-- Barra de progreso -->
+    <div id="progressBar">
+      <div></div>
+    </div>
+
+    <script>
+      // Función para actualizar la barra de progreso
+      function updateProgressBar() {
+        var progressBar = document
+          .getElementById("progressBar")
+          .querySelector("div");
+        var progress = 0;
+        var interval = setInterval(function () {
+          progress += Math.random() * 20; // Simula el progreso aleatorio
+          progressBar.style.width = progress + "%";
+          if (progress >= 100) {
+            clearInterval(interval);
+            // Una vez completada la carga, redirigir a la página principal
+            window.location.href = "paginaprincipal.html";
+          }
+        }, 500); // Intervalo de actualización de la barra de progreso (en milisegundos)
+      }
+
+      // Llama a la función para iniciar la actualización de la barra de progreso
+      updateProgressBar();
+    </script>
+  </body>
+</html>
