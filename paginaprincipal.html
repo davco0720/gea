@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEA</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <!-- Icono de hamburguesa para el menú -->
+      <div class="hamburguesa" onclick="toggleMenu()">
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+      </div>
+
+      <!-- Menú desplegable -->
+      <nav class="menu-desplegable">
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href="paginaprincipal.html">Página Principal</a></li>
+          <li><a href="quienes-somos.html">¿Quiénes Somos?</a></li>
+          <li><a href="por-que-elegirnos.html">¿Por qué Elegirnos?</a></li>
+          <li><a href="propuestas.html">Propuestas</a></li>
+        </ul>
+      </nav>
+
+      <video
+        autoplay
+        muted
+        loop
+        id="video-fondo"
+        draggable="false"
+        ondragstart="return false;"
+        disablepictureinpicture
+      >
+        <source src="Fondo.mp4" type="video/mp4" />
+      </video>
+      <div class="texto-banner">
+        <h1>¡Únete a GEA y sé parte del cambio!</h1>
+      </div>
+    </header>
+
+    <script>
+      // Deshabilitar el menú contextual del clic derecho
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Deshabilitar la opción "Ver código fuente"
+      document.addEventListener("keydown", function (e) {
+        if (e.keyCode === 123) {
+          // F12
+          e.preventDefault();
+          return false;
+        } else if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+          // Ctrl+Shift+I
+          e.preventDefault();
+          return false;
+        } else if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+          // Ctrl+Shift+C
+          e.preventDefault();
+          return false;
+        } else if (e.ctrlKey && e.keyCode === 85) {
+          // Ctrl+U
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
+
+    <main>
+      <div class="contenido">
+        <p>
+          Nuestro objetivo es mejorar nuestra institución y la forma en que
+          pensamos como comunidad estudiantil. Creemos en la importancia de
+          escuchar las voces de todos los estudiantes y trabajar juntos para
+          crear un ambiente más inclusivo y enriquecedor para todos.
+        </p>
+        <p>
+          Somos la voz estudiantil que busca representar los intereses y
+          preocupaciones de cada uno de nuestros compañeros.
+        </p>
+        <p>
+          Tu voto cuenta para hacer realidad nuestras propuestas y lograr un
+          cambio positivo en nuestra comunidad educativa. ¡Juntos, podemos
+          marcar la diferencia!
+        </p>
+      </div>
+    </main>
+
+    <div class="carrusel">
+      <div class="carrusel-imagenes">
+        <img src="GEA.png" alt="GEA" ondragstart="return false;"/>
+        <img src="GEA (1).png" alt="GEA" ondragstart="return false;" />
+        <!-- Agrega más imágenes aquí si lo deseas -->
+      </div>
+    </div>
+
+    <footer class="pie-de-pagina">
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/gea.ies/" target="_blank">
+          <img
+            src="Instagram_icon.png.WEBP"
+            alt="Instagram"
+            class="logo-instagram"
+          />
+        </a>
+      </div>
+      <div class="frase">
+        <p>El conocimiento es poder</p>
+      </div>
+      <div class="copyright">
+        <p>GEA © 2024</p>
+      </div>
+    </footer>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <a href="https://www.instagram.com/gea.ies/" target="_blank">
+          <img src="GEA.png" alt="#yovotoGEA" style="width: 40%" />
+        </a>
+
+        <p>#yovotoGEA</p>
+      </div>
+    </div>
+
+    <script src="funcionalidad.js"></script>
+  </body>
+</html>
